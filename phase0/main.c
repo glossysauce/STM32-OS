@@ -19,7 +19,8 @@ int main(void){
 
     while (1){
         GPIOA_ODR |= (0b01 << 5);
-        for(int i = 0; i < 1000000; i++)
+        for(int i = 0; i < 1000000; i++){}
         GPIOA_ODR &= ~(0b01 << 5);
+        for(int i = 0; i < 1000000; i++){}
     }
 }
