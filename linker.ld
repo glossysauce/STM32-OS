@@ -22,19 +22,23 @@ SECTIONS
     } > FLASH
 
     _sidata = LOADADDR(.data);
-    .data :
+    .data ALIGN(4) :
     {
+        . = ALIGN(4);
         _sdata = .;
         *(.data)
         *(.data*)
+        . = ALIGN(4);
         _edata = .;
     } > RAM AT> FLASH
 
-    .bss :
+    .bss ALIGN(4) :
     {
+        . = ALIGN(4);
         _sbss = .;
         *(.bss)
         *(.bss*)
+        . = ALIGN(4);
         _ebss = .;
     } > RAM
 }
