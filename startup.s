@@ -2,7 +2,8 @@
 .cpu cortex-m4
 .thumb
 
-.section .isr_vector
+.section .isr_vector, "a", %progbits
+.align 7
 .type vector_table, %object
 vector_table:
         .word _estack

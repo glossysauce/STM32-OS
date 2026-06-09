@@ -17,5 +17,3 @@ clean:
 
 flash:
 	openocd -f interface/stlink.cfg -f target/stm32l4x.cfg -c "program $(TARGET).elf verify reset exit"
-
-

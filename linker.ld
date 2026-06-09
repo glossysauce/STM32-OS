@@ -8,12 +8,14 @@ MEMORY
 
 SECTIONS
 {
-    .isr_vector :
+    . = 0x08000000;
+    
+    .isr_vector ALIGN(128) :
     {
-        *(.isr_vector)
+        KEEP(*(.isr_vector))
     } > FLASH
 
-    .text :
+    .text ALIGN(4) :
     {
         *(.text)
         *(.text*)
